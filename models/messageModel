@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const messageSchema = mongoose.Schema({
-  senderId: {
+  sender: {
     type: String,
     required: [true, "a message must have a sender"],
   },

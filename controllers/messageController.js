@@ -23,7 +23,7 @@ exports.createMessage = async (req, res) => {
   try {
     const date = new Date();
     const message = await Message.create({
-      senderId: "mattfeng2001",
+      sender: "tengrr",
       createTime: date,
       content: "content of this message",
     });

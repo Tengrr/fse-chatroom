@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title fse chatroom
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    link(rel="stylesheet", type="text/css", href="../css/styles.css")
+  body
+    .upper-container
+      nav.top-nav
+        ul
+          li.nav-li-title FSE Chat Room
+          li.nav-li-button
+            button.nav-button Logout
+      .chat-messages
+        each message in messages
+          .message
+            ul
+              li.username=message.sender
+              li.sendTime=message.createTime
+            p.text=message.content
+
+    .lower-container
+      form.text-form
+        .textarea
+          textarea#textarea(name="textarea", rows="5")
+        nav.bottom-nav
+          input.nav-button(type="submit", value="Post")
