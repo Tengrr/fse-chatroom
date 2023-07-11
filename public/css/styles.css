@@ -79,7 +79,7 @@ label {
   font-weight: bold;
 }
 
-input[type="username"],
+input[type="text"],
 input[type="password"] {
   width: 91%;
   max-width: 400px;

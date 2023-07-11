@@ -14,6 +14,14 @@ exports.getChatroom = async (req, res) => {
   });
 };
 
+exports.registerPage = async (req, res) => {
+  res.redirect("/register.html");
+};
+
+exports.loginPage = async (req, res) => {
+  res.redirect("/index.html");
+};
+
 const formatDate = (date) => {
   const options = {
     year: "numeric",
