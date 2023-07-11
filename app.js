@@ -3,6 +3,7 @@ const path = require("path");
 
 const messageRouter = require("./routes/messageRoutes");
 const viewRouter = require("./routes/viewRoutes");
+const userRouter = require("./routes/userRoutes");
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/api/messages", messageRouter);
 app.use("/", viewRouter);
+app.use("/", userRouter);
 
 module.exports = app;
