@@ -6,8 +6,6 @@ exports.getChatroom = async (req, res) => {
     message.timeString = formatDate(message.createTime);
   });
 
-  console.log(messages);
-
   res.status(200).render("chatroom", {
     title: "All messages",
     messages,

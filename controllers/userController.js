@@ -42,6 +42,8 @@ exports.register = async (req, res) => {
     let message;
     if (error.errors?.username?.message) {
       message = error.errors.username.message;
+    } else if (error.errors?.password?.message) {
+      message = error.errors.password.message;
     } else if (error.errors?.passwordConfirm?.message) {
       message = error.errors.passwordConfirm.message;
     } else {

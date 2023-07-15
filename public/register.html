@@ -4,6 +4,7 @@
     <title>fse chatroom</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
   <body>
@@ -19,19 +20,15 @@
 
       <div class="container">
         <h2>FSE Chat Room</h2>
-        <form class="auth-form">
+        <form class="auth-form" id="register-form">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" />
 
           <label for="password">Password</label>
           <input type="password" id="password" name="password" />
 
-          <label for="passwordConfirmation">Confirm Password</label>
-          <input
-            type="password"
-            id="passwordConfirmation"
-            name="passwordConfirmation"
-          />
+          <label for="passwordConfirm">Confirm Password</label>
+          <input type="password" id="passwordConfirm" name="passwordConfirm" />
 
           <div class="button">
             <input type="submit" class="auth-button" value="Register" />
@@ -39,5 +36,6 @@
         </form>
       </div>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
