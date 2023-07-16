@@ -1,5 +1,6 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+const { promisify } = require("util");
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -87,4 +88,26 @@ exports.logout = (req, res) => {
     httpOnly: true,
   });
   res.status(200).json({ status: "success" });
+};
+
+exports.checkLogin = async (req, res, next) => {
+  try {
+    if (req.cookies.jwt) {
+      const decoded = await promisify(jwt.verify)(
+        req.cookies.jwt,
+        process.env.JWT_SECRET
+      );
+      const currentUser = await User.findById(decoded.id);
+      if (!currentUser) {
+        res.redirect("/login");
+      }
+      req.user = currentUser;
+      res.locals.user = currentUser;
+      return next();
+    } else {
+      res.redirect("/login");
+    }
+  } catch (error) {
+    res.redirect("/login");
+  }
 };
