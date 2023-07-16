@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Routes
-app.use("/api/messages", messageRouter);
+app.use("/message", messageRouter);
 app.use("/", viewRouter);
 app.use("/", userRouter);
 

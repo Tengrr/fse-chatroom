@@ -21,11 +21,11 @@ exports.getAllMessages = async (req, res) => {
 
 exports.createMessage = async (req, res) => {
   try {
-    const date = new Date();
+    const date = formatDate(new Date());
     const message = await Message.create({
-      sender: "tengrr",
+      sender: req.user.username,
       createTime: date,
-      content: "content of this message",
+      content: req.body.message,
     });
 
     res.status(201).json({
@@ -40,4 +40,19 @@ exports.createMessage = async (req, res) => {
       message: error,
     });
   }
+};
+
+const formatDate = (date) => {
+  const options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  };
+  return date
+    .toLocaleString("en-US", options)
+    .replace(/\//g, ".")
+    .replace(",", " ");
 };

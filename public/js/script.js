@@ -1,3 +1,5 @@
+const socket = io();
+
 $(document).ready(function () {
   $("#login-form").submit(function (event) {
     event.preventDefault();
@@ -61,5 +63,53 @@ $(document).ready(function () {
         console.error(error);
         alert("Failed to logout. Please try again later.");
       });
+  });
+
+  $("#message-form").submit(function (event) {
+    event.preventDefault();
+    console.log("click");
+    var message = $("#message").val();
+    $.ajax({
+      url: "/message",
+      method: "POST",
+      data: {
+        message: message,
+      },
+      success: function (response) {
+        console.log(response);
+        socket.emit("message", response.data.message);
+        $("#message").val("");
+      },
+      error: function (xhr, textStatus, errorThrown) {
+        response = $.parseJSON(xhr.responseText);
+        console.log(response.message);
+        $("#message").val("");
+      },
+    });
+  });
+
+  socket.on("message", (message) => {
+    var sender = message.sender;
+    var createTime = message.createTime;
+    var content = message.content;
+    var newMessage = $(
+      '<div class="message">' +
+        "<ul>" +
+        '<li class="username">' +
+        sender +
+        "</li>" +
+        '<li class="sendTime">' +
+        createTime +
+        "</li>" +
+        "</ul>" +
+        '<p class="text">' +
+        content +
+        "</p>" +
+        "</div>"
+    );
+
+    $(".chat-messages").append(newMessage);
+    var element = $(".chat-messages");
+    element.scrollTop(element[0].scrollHeight);
   });
 });

@@ -5,6 +5,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width,initial-scale=1")
     link(rel="stylesheet", type="text/css", href="../css/styles.css")
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+    script(src='https://cdn.socket.io/4.5.4/socket.io.min.js')
   body
     .upper-container
       nav.top-nav
@@ -17,13 +18,14 @@ html(lang="en")
           .message
             ul
               li.username=message.sender
-              li.sendTime=message.timeString
+              li.sendTime=message.createTime
             p.text=message.content
 
     .lower-container
-      form.text-form
+      form.text-form#message-form
         .textarea
-          textarea#textarea(name="textarea", rows="5")
+          textarea#message(name="message", rows="5")
         nav.bottom-nav
           input.nav-button(type="submit", value="Post")
-    script(src='./js/script.js')
+
+    script(src='../js/script.js')

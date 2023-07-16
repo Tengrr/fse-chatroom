@@ -6,7 +6,7 @@ const messageSchema = mongoose.Schema({
     required: [true, "a message must have a sender"],
   },
   createTime: {
-    type: Date,
+    type: String,
     required: [true, "a message must have a createTime"],
   },
   content: {
