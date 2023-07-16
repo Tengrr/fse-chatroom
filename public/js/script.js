@@ -46,4 +46,20 @@ $(document).ready(function () {
       },
     });
   });
+
+  $("#logout").click(function () {
+    $.get("/logout")
+      .done(function (res) {
+        console.log(res);
+        if (res.status == "success") {
+          window.location.href = "/login";
+        } else {
+          alert(res.message);
+        }
+      })
+      .fail(function (xhr, status, error) {
+        console.error(error);
+        alert("Failed to logout. Please try again later.");
+      });
+  });
 });

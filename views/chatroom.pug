@@ -4,13 +4,14 @@ html(lang="en")
     title fse chatroom
     meta(name="viewport", content="width=device-width,initial-scale=1")
     link(rel="stylesheet", type="text/css", href="../css/styles.css")
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
   body
     .upper-container
       nav.top-nav
         ul
           li.nav-li-title FSE Chat Room
           li.nav-li-button
-            button.nav-button Logout
+            button.nav-button#logout Logout
       .chat-messages
         each message in messages
           .message
@@ -25,3 +26,4 @@ html(lang="en")
           textarea#textarea(name="textarea", rows="5")
         nav.bottom-nav
           input.nav-button(type="submit", value="Post")
+    script(src='./js/script.js')
