@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  background-color: #1f1e33;
   height: 97vh;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ body {
 .top-nav {
   width: 100%;
   height: 50px;
-  background-color: rgb(144 189 247);
+  background-color: #1079ad;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -39,6 +39,7 @@ body {
   align-items: center;
   font-size: large;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .nav-li-button {
@@ -50,11 +51,11 @@ body {
 .nav-button {
   height: 36px;
   padding: 1px 10px;
-  background-color: rgb(249 168 97);
-  color: #000;
+  background-color: #000;
+  color: #ffffff;
   font-weight: bolder;
   font-size: medium;
-  border: #000;
+  border: #ffffff;
   border-style: solid;
   border-width: 2px;
   border-radius: 8px;
@@ -62,11 +63,12 @@ body {
 }
 
 .nav-button:hover {
-  background-color: rgb(189, 119, 58);
+  background-color: rgb(62, 61, 65);
 }
 
 h2 {
   text-align: center;
+  color: #ffffff;
 }
 
 .auth-form {
@@ -77,6 +79,7 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #ffffff;
 }
 
 input[type="text"],
@@ -93,8 +96,8 @@ input[type="password"] {
 .auth-button {
   width: 45%;
   padding: 10px;
-  background-color: rgb(144 189 247);
-  color: #000;
+  background-color: #1079ad;
+  color: #ffffff;
   font-weight: bolder;
   font-size: larger;
   border: #000;
@@ -107,7 +110,7 @@ input[type="password"] {
 }
 
 .auth-button:hover {
-  background-color: rgb(116, 151, 197);
+  background-color: #0d5b81;
 }
 
 .button {
@@ -124,7 +127,8 @@ input[type="password"] {
 }
 
 .chat-messages .message {
-  background-color: #ebebeb;
+  background-color: #7d7e96;
+  color: #ffffff;
   margin: 5px;
   padding: 10px;
   display: block;
@@ -170,12 +174,13 @@ textarea {
   display: block;
   margin-bottom: 20px;
   border-width: 2px;
+  background-color: #d6e1f1;
 }
 
 .bottom-nav {
   width: 100%;
   height: 50px;
-  background-color: rgb(144 189 247);
+  background-color: #1079ad;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;

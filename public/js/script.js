@@ -67,7 +67,6 @@ $(document).ready(function () {
 
   $("#message-form").submit(function (event) {
     event.preventDefault();
-    console.log("click");
     var message = $("#message").val();
     $.ajax({
       url: "/message",
