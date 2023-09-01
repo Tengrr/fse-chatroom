@@ -37,7 +37,7 @@
   - message
     - /message POST
    
-## Code Structure
+## Code Structure (MVC)
 
 ## Reference
 [1] https://github.com/jonasschmedtmann/complete-node-bootcamp/tree/master/4-natours (for code structure and implementation of JSON Web Token)
