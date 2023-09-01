@@ -1,4 +1,4 @@
-# FSE-Chatroom Pre-Assignment &nbsp;&nbsp;&nbsp; *By Shiyu Feng*
+# FSE-Chatroom Pre-Assignment &nbsp;&nbsp;&nbsp; *Contributed by Shiyu Feng*
 
 *Purpose of the project: A chatroom for FSE students and faculty.*
 
@@ -41,3 +41,4 @@
 
 ## Reference
 [1] https://github.com/jonasschmedtmann/complete-node-bootcamp/tree/master/4-natours (for code structure and implementation of JSON Web Token)
+## *Thanks for watching!*
