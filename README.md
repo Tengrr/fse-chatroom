@@ -39,6 +39,6 @@
    
 ## Code Structure (MVC)
 
-## Reference
+## References
 [1] https://github.com/jonasschmedtmann/complete-node-bootcamp/tree/master/4-natours (for code structure and implementation of JSON Web Token)
 ## *Thanks for watching!*
