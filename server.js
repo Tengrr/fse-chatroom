@@ -8,23 +8,11 @@ dotenv.config({ path: "./config.env" });
 const app = require("./app");
 
 const server = http.createServer(app);
-const io = socketIo(server);
 
-io.on("connection", (socket) => {
-  console.log("New client connected");
+// const DB = process.env.DATABASE_DEV;
+const DB = process.env.DATABASE_PROD;
 
-  socket.on("message", async (message) => {
-    io.emit("message", message);
-  });
-
-  socket.on("disconnect", () => {
-    console.log("Client disconnected");
-  });
-});
-
-const DB = process.env.DATABASE;
-
-console.log(process.env.DATABASE);
+console.log(DB);
 
 mongoose
   .connect(DB, {
@@ -38,4 +26,18 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => {
   // server.listen(port, "192.168.1.2", () => {
   console.log(`App is running on port ${port}...`);
+});
+
+const io = socketIo(server);
+
+io.on("connection", (socket) => {
+  // console.log("New client connected");
+
+  socket.on("message", async (message) => {
+    io.emit("message", message);
+  });
+
+  // socket.on("disconnect", () => {
+  //   console.log("Client disconnected");
+  // });
 });
