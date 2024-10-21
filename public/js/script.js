@@ -52,7 +52,6 @@ $(document).ready(function () {
   $("#logout").click(function () {
     $.get("/logout")
       .done(function (res) {
-        console.log(res);
         if (res.status == "success") {
           window.location.href = "/login";
         } else {
@@ -60,7 +59,6 @@ $(document).ready(function () {
         }
       })
       .fail(function (xhr, status, error) {
-        console.error(error);
         alert("Failed to logout. Please try again later.");
       });
   });
@@ -75,13 +73,11 @@ $(document).ready(function () {
         message: message,
       },
       success: function (response) {
-        console.log(response);
         socket.emit("message", response.data.message);
         $("#message").val("");
       },
       error: function (xhr, textStatus, errorThrown) {
         response = $.parseJSON(xhr.responseText);
-        console.log(response.message);
         $("#message").val("");
       },
     });

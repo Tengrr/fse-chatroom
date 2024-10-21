@@ -9,8 +9,8 @@ const app = require("./app");
 
 const server = http.createServer(app);
 
-// const DB = process.env.DATABASE_DEV;
-const DB = process.env.DATABASE_PROD;
+const DB = process.env.DATABASE_DEV;
+// const DB = process.env.DATABASE_PROD;
 
 console.log(DB);
 
