@@ -15,9 +15,10 @@ Follow the steps below to set up the project and run the test cases.
 4. [**Important**!!] On the login page, register a new user with the following credentials, then you can log in with this account. If you don't register the tests will fail.
 - Username: fengshiyu
 - Password: aaaaa
-5. Open a new terminal window and run the following command to launch Cypress `npx cypress open`.
-6. A Cypress window will appear. Follow these steps: continue -> E2E Testing -> Choose a browser to run the tests
-7. There will be two test specs available. One for frontend user stories, another for backend user stories. You can run both of them.
+5. You can run `npx cypress run` to run the tests with a single command. Then you can see a generated report on the terminal.
+6. Open a new terminal window and run the following command to launch Cypress `npx cypress open`.
+7. A Cypress window will appear. Follow these steps: continue -> E2E Testing -> Choose a browser to run the tests
+8. There will be two test specs available. One for frontend user stories, another for backend user stories. You can run both of them.
   
    
 
